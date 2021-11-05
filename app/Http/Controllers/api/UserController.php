@@ -67,7 +67,7 @@ class UserController extends Controller
     {
         $validator = Validator::make($request->all(), [
             'name' => ['string','max:255'],
-            'avatar' => ['dimensions:max_width=3000,max_height=3000', 'image:jpeg,png,jpg,gif,svg'],
+            'avatar' => ['dimensions:max_width=256,max_height=256', 'image:jpeg,png,jpg,gif,svg'],
         ]);
 
         if ($validator->fails()) {
